@@ -24,11 +24,8 @@
 const express = require("express")
 const server = express()
 const port = 5000
+const usersRouter = require("./routers/index")
 
-server.get("/" , (req, res) => {
-    res.send({
-        msg:" hello world"
-    })
-})
 
+server.use("/users" , usersRouter)
 server.listen(port , () => console.log(`http://localhost:${port}`))
