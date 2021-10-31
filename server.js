@@ -16,3 +16,6 @@ app.use("/" , (req, res) => {
 })
 
 app.listen(port , () => console.log(`http://localhost:${port}`))
+// //  the process core module is provided a method to terminate the nodeJS program
+// // process.exit()
+

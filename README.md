@@ -45,7 +45,10 @@ Mainly, used for web servers - but not limited to that
 you don't have to wait for the user to update their browser, you can just choose the version
 of ECMAScript.
 
-4. V8 which is an open source
+4. V8 which is an open source.
+   It is the js engine that execute it while browsing with chrome.
+   provides the runtime for js.
+   Dom and Api are provided by the browser
 5. asynchronous platform --> if you are performing a network request to read json, the execution of that
    code/thread will block until the response is ready
 
@@ -101,3 +104,23 @@ It is a node module we can install it `npm install express`
 4. Convenience Helpers
 5. Views
    Views provide a way to dynamically render HTML on the server and even generate it using other languages.
+
+### How to read environment variables
+
+The process core module of Node has a property called `env` that host all the variables that set
+the moment the process was started like `process.env.NODE_ENV`
+
+**_ NOTE _**
+By default js is a synchronous, that means asynchronous operation is not part of js.
+When we use an async operation, the js engine gets it and throw to the browser api to handle
+the countdown and continues with execution the code. when the countdown is finished, the browser
+will pass through the callback function to the event loop
+when the call stack is clear of functions, the even loop will push that callback function
+to the call stack to execute it.
+
+**_ Developer tools _**
+There's a lot of packages that are made for us to save a lot of time.
+
+1. `nodemon`
+   which helps to re-run our server on each change/save we make to the project.
+2. `eslint` tells us where our code is suck and needs to be changed
